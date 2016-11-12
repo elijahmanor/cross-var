@@ -1,0 +1,14 @@
+{
+  "name": "cross-var",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "cross-var": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Elijah Manor",
+  "license": "MIT"
+}
