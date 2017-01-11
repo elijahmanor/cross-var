@@ -1,5 +1,24 @@
 # `cross-var`
 
+[![NPM](https://nodei.co/npm/cross-var.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/cross-var/) 
+[![NPM](https://nodei.co/npm-dl/cross-var.png?months=9&height=3)](https://nodei.co/npm/cross-var/)
+
+[![npm version](https://img.shields.io/npm/v/cross-var.svg)](https://www.npmjs.com/package/cross-var)
+[![npm license](https://img.shields.io/npm/l/cross-var.svg)](https://www.npmjs.com/package/cross-var)
+[![npm download](https://img.shields.io/npm/dm/cross-var.svg)](https://www.npmjs.com/package/cross-var)
+[![npm download](https://img.shields.io/npm/dt/cross-var.svg)](https://www.npmjs.com/package/cross-var)
+[![Package Quality](http://npm.packagequality.com/shield/cross-var.svg)](http://packagequality.com/#?package=cross-var)
+[![Inline docs](http://inch-ci.org/github/elijahmanor/cross-var.svg?branch=master)](http://inch-ci.org/github/elijahmanor/cross-var)
+[![star this repo](http://githubbadges.com/star.svg?user=HansHammel&repo=cross-var&style=flat&color=fff&background=007ec6)](https://github.com/elijahmanor/cross-var)
+[![fork this repo](http://githubbadges.com/fork.svg?user=HansHammel&repo=cross-var&style=flat&color=fff&background=007ec6)](https://github.com/elijahmanor/cross-var/fork)
+
+[![david dependency](https://img.shields.io/david/elijahmanor/cross-var.svg)](https://david-dm.org/elijahmanor/cross-var)
+[![david devDependency](https://img.shields.io/david/dev/elijahmanor/cross-var.svg)](https://david-dm.org/elijahmanor/cross-var)
+[![david optionalDependency](https://img.shields.io/david/optional/elijahmanor/cross-var.svg)](https://david-dm.org/elijahmanor/cross-var)
+[![david peerDependency](https://img.shields.io/david/peer/elijahmanor/cross-var.svg)](https://david-dm.org/elijahmanor/cross-var)
+[![npms score](https://badges.npms.io/cross-var.svg)](https://www.npmjs.com/package/cross-var)
+[![Known Vulnerabilities](https://snyk.io/test/github/elijahmanor/cross-var/badge.svg)](https://snyk.io/test/github/elijahmanor/cross-var)
+
 ## Overview
 
 When using `npm scripts` it creates a lot of environment variables that are available for you to leverage when executing scripts.
