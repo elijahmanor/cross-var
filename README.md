@@ -113,3 +113,13 @@ Yes, if you can do that... then great! Windows 10’s version 1607 update, dubbe
 
 However, if you want to support older Windows versions, then you might consider using `cross-env` or another approach to leverage environment variables in your scripts.
 </details>
+
+<details>
+  <summary>Platform specific delimiter variables like `PATH`?</summary>
+`$:` will be replaced with `;` or `:` depending on your platform.
+
+Example:
+```
+cross-var cross-env NODE_PATH=$NODE_PATH$:test mocha --recursive
+```
+</details>
