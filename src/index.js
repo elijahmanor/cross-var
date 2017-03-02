@@ -8,8 +8,10 @@ import exit from 'exit';
 function normalize( args, isWindows ) {
     return args.map( arg => {
         Object.keys( process.env ).forEach( key => {
-            const regex = new RegExp( `\\$${ key }|%${ key }%`, "i" );
-            arg = arg.replace( regex, process.env[ key ] );
+            const isWin32 = os.platform() === 'win32';
+            arg = arg.replace( /\$:/g, isWin32 ? ';' : ':' );
+            const reg = new RegExp( `\\$${ key }|%${ key }%`, 'gi' );
+            arg = arg.replace( reg, process.env[ key ] );
         } );
         return arg;
     } )
