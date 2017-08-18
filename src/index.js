@@ -4,7 +4,6 @@ import spawn from "cross-spawn";
 import os from "os";
 import { exec } from "child_process";
 import exit from 'exit';
-const isWindows = (process.platform.substr(0, 3) === "win");
 
 function normalize( args ) {
     const isWindows = (process.platform.substr(0, 3) === "win");
