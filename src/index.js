@@ -10,7 +10,7 @@ function normalize( args, isWindows ) {
         Object.keys( process.env )
             .sort( ( x, y ) => x.length < y.length ) // sort by descending length to prevent partial replacement
             .forEach( key => {
-                const regex = new RegExp( `\\$${ key }|%${ key }%`, "i" );
+                const regex = new RegExp( `\\$${ key }|%${ key }%`, "ig" );
                 arg = arg.replace( regex, process.env[ key ] );
             } );
         return arg;
