@@ -5,14 +5,15 @@ import os from "os";
 import { exec } from "child_process";
 import exit from 'exit';
 
-function normalize( args ) {
-    const isWindows = (process.platform.substr(0, 3) === "win");
+function normalize( args, isWindows ) {
     return args.map( arg => {
         Object.keys( process.env )
             .sort( ( x, y ) => x.length < y.length ) // sort by descending length to prevent partial replacement
             .forEach( key => {
-                const regex = new RegExp( `\\$${ key }|%${ key }%`, "ig" );
-                arg = arg.replace( regex, process.env[ key ] );
+                const regex = new RegExp( `\\$(\\w+)|%(\\w+)%`, "ig" );
+                const name = (arg.split(regex) !== null) ? arg.split(regex)[1] : undefined
+                const value = (process.env[name] === undefined) ? '' : process.env[name];
+                arg = arg.replace(regex, value);
             } );
         return arg;
     } )
