@@ -8,10 +8,12 @@ import exit from 'exit';
 function normalize( args ) {
     const isWindows = (process.platform.substr(0, 3) === "win");
     return args.map( arg => {
-        const regex = new RegExp( `\\$(\\w+)|%(\\w+)%`, "i" );
-        const key = (arg.match(regex) !== null) ? arg.match(regex)[1] : undefined;
-        const value = (isWindows && process.env[key] === undefined) ? '' : process.env[key];
-        arg = arg.replace(regex, value);
+        Object.keys( process.env )
+            .sort( ( x, y ) => x.length < y.length ) // sort by descending length to prevent partial replacement
+            .forEach( key => {
+                const regex = new RegExp( `\\$${ key }|%${ key }%`, "ig" );
+                arg = arg.replace( regex, process.env[ key ] );
+            } );
         return arg;
     } )
 }
