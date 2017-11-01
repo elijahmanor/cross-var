@@ -10,8 +10,10 @@ function normalize( args, isWindows ) {
         Object.keys( process.env )
             .sort( ( x, y ) => x.length < y.length ) // sort by descending length to prevent partial replacement
             .forEach( key => {
-                const regex = new RegExp( `\\$${ key }|%${ key }%`, "ig" );
-                arg = arg.replace( regex, process.env[ key ] );
+                const regex = new RegExp( `\\$(\\w+)|%(\\w+)%`, "ig" );
+                const name = (arg.split(regex) !== null) ? arg.split(regex)[1] : undefined
+                const value = (process.env[name] === undefined) ? '' : process.env[name];
+                arg = arg.replace(regex, value);
             } );
         return arg;
     } )
