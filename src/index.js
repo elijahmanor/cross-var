@@ -13,13 +13,16 @@ function normalize( args, isWindows ) {
                 const regex = new RegExp( `\\$${ key }|%${ key }%`, "ig" );
                 arg = arg.replace( regex, process.env[ key ] );
             } );
+        arg = arg.replace(/%[^%\s]+%/ig, '');
         return arg;
-    } )
+    } ).filter((arg) => arg);
 }
 
 let args = process.argv.slice( 2 );
+args = normalize( args );
+
 if ( args.length === 1 ) {
-    const [ command ] = normalize( args );
+    const [ command ] = args;
     const proc = exec( command, ( error, stdout, stderr ) => {
         if ( error ) {
             console.error( `exec error: ${ error }` );
@@ -30,7 +33,6 @@ if ( args.length === 1 ) {
         exit(proc.code);
     });
 } else {
-    args = normalize( args );
     const command = args.shift();
     const proc = spawn.sync( command, args, { stdio: "inherit" } );
     exit(proc.status);
