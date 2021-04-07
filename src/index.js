@@ -8,7 +8,7 @@ import exit from 'exit';
 function normalize( args, isWindows ) {
     return args.map( arg => {
         Object.keys( process.env )
-            .sort( ( x, y ) => x.length < y.length ) // sort by descending length to prevent partial replacement
+            .sort( ( x, y ) => y.length - x.length ) // sort by descending length to prevent partial replacement
             .forEach( key => {
                 const regex = new RegExp( `\\$${ key }|%${ key }%`, "ig" );
                 arg = arg.replace( regex, process.env[ key ] );
