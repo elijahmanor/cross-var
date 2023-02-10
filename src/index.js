@@ -1,7 +1,6 @@
 #!/usr/bin/env node --harmony
 
-import spawn from "cross-spawn";
-import os from "os";
+import { spawn } from "cross-spawn";
 import { exec } from "child_process";
 import exit from 'exit';
 
