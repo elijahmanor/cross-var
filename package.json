@@ -1,6 +1,6 @@
 {
   "name": "cross-var",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "",
   "main": "index.js",
   "bin": {
@@ -11,9 +11,7 @@
   },
   "author": "Elijah Manor",
   "license": "MIT",
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
+
   "keywords": [
     "npm-scripts"
   ],
@@ -25,10 +23,12 @@
     "url": "https://github.com/elijahmanor/cross-var/issues"
   },
   "dependencies": {
-    "babel-preset-es2015": "^6.18.0",
-    "babel-preset-stage-0": "^6.16.0",
-    "babel-register": "^6.18.0",
-    "cross-spawn": "^5.0.1",
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-flow": "^7.18.6",
+    "@babel/preset-stage-0": "^7.8.3",
+    "@babel/register": "^7.18.9",
+    "cross-spawn": "^7.0.3",
     "exit": "^0.1.2"
   }
 }
